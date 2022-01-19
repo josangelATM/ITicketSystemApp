@@ -13,6 +13,7 @@ import store from './src/store/store'
 import * as Progress from 'react-native-progress';
 import * as SecureStore from 'expo-secure-store';
 import { fetchUserData } from './src/store/actions/index'
+import ChooseTicketType from './src/screens/ChooseTicketType';
 
 const Stack = createNativeStackNavigator();
 
@@ -37,21 +38,29 @@ function App() {
 
   return (
     <Provider store={store}>
+      { isBusy ? <View style={styles.container}><Progress.Bar size={800} indeterminate={true} borderWidth={5} color={'black'}/></View> : 
+      isLogged ?
       <NavigationContainer>
-        <Stack.Navigator>
-          <Stack.Screen
-          name='Auth'
-          component={Auth}
-          options={{ headerShown: false }}
-          />
+        <Stack.Navigator> 
           <Stack.Screen
           name='LoggedIn'
           component={LoggedIn}
           options={{ headerShown: false }}
           />
+      </Stack.Navigator>
+      </NavigationContainer>
+      : 
+      <NavigationContainer>
+
+        <Stack.Navigator> 
+        <Stack.Screen
+        name='Auth'
+        component={Auth}
+        options={{ headerShown: false }}
+        />
         </Stack.Navigator>
       </NavigationContainer>
-
+      }
 {/* 
       { isBusy ? <View style={styles.container}><Progress.Bar size={800} indeterminate={true} borderWidth={5} color={'black'}/></View> : 
       
@@ -82,6 +91,10 @@ function LoggedIn() {
       <Stack.Screen
       name="Home"
       component={Home}
+      />
+      <Stack.Screen
+      name="ChooseTicketType"
+      component={ChooseTicketType}
       />
       <Stack.Screen
       name="Account"

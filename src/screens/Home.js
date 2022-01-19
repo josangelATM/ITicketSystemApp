@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { StyleSheet, Text, View, TextInput, ScrollView } from 'react-native';
 import { useSelector } from 'react-redux'
 import MainIcon from '../components/MainIcon';
@@ -11,7 +12,7 @@ const Home = ({navigation}) =>{
             { isAdmin ? 
             <ScrollView style={styles.buttonContainerScroll}>
                 <Text style={styles.welcomeTitle}>Hello {user.user.firstName}!</Text> 
-                <MainIcon title='Request something' icon='tools'/>
+                <MainIcon title='Request something' icon='tools' onPress={() => navigation.navigate('ChooseTicketType')}/>
                 <MainIcon title='My Tickets' icon='list'/>
                 <MainIcon title='Account' icon='user-alt'/>
                 <MainIcon title='My Tickets' icon='users'/>

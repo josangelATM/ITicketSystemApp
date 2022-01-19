@@ -3,13 +3,14 @@ import { useDispatch } from 'react-redux';
 import AppButton from '../components/AppButton'
 import { logout } from '../store/actions'
 import * as SecureStore from 'expo-secure-store';
+import {Restart} from 'fiction-expo-restart';
 
 const Account = ({navigation}) =>{
     const dispatch = useDispatch()
     const userLogout = () =>{
         SecureStore.deleteItemAsync('token').then(()=>{
             dispatch(logout)
-            navigation.navigate('Auth',{ screen: 'Login'})
+            Restart()
         }).catch((error)=>{
             console.log(error)
         })

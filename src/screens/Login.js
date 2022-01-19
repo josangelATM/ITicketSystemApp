@@ -35,11 +35,9 @@ const Login = ({navigation}) => {
       setError('Invalid login')
       setSuccess(false)
       setLoader(false)
-      setSuccess(true)
     }else{
       SecureStore.setItemAsync('token',json.token).then(() =>{
         dispatch(fetchUserData(json.token))
-        navigation.navigate('LoggedIn',{screen:'Home'})
         setLoader(false)
       })
     }

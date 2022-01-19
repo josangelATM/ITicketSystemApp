@@ -2,7 +2,7 @@ import { Button, StyleSheet,TouchableOpacity, Text } from 'react-native';
 import colors from '../theme/colors';
 
 const AppButton = ({onPress, title, disabled,style}) =>(
-    <TouchableOpacity onPress={onPress} style={[style,styles.appButtonContainer, disabled ? styles.buttonDisable : null]} disabled={disabled}>
+    <TouchableOpacity onPress={onPress} style={[styles.appButtonContainer,style, disabled ? styles.buttonDisable : null]} disabled={disabled}>
         <Text style={styles.appButtonText}>{title}</Text>
     </TouchableOpacity>
     )
