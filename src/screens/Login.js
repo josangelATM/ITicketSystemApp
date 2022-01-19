@@ -53,7 +53,7 @@ const Login = ({navigation}) => {
     return(
         <View style={styles.container}>
           <Text style={styles.title}>ITicketSystem</Text>
-          { loader ? <Progress.Circle size={100} indeterminate={true} borderWidth={5} color={'black'}/> : 
+          { loader ? <Progress.Bar size={100} indeterminate={true} borderWidth={5} color={'black'}/> : 
           <View style={styles.formContainer}>
             <LoginInput
             secure={false}

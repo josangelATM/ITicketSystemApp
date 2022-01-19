@@ -50,7 +50,7 @@ const Register = ({navigation}) => {
     return(
         <ScrollView style={styles.container}>
             <Text style={styles.title}>Register</Text> 
-            { loader ? <View style={styles.circleContainer}><Progress.Circle size={150} indeterminate={true} borderWidth={5} color={'black'}/></View> : 
+            { loader ? <View style={styles.circleContainer}><Progress.Bar size={150} indeterminate={true} borderWidth={5} color={'black'}/></View> : 
             <View  style={styles.formContainer}>
                 <Controller        
                 control={control}        
