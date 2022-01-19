@@ -21,7 +21,6 @@ const ChooseTicketType = () => {
                 method: "GET",
                 headers: getHeaders,
             };
-
             fetch('https://iticketsystem20211228085301.azurewebsites.net/api/tickettypes',requestOptions)
             .then((response) => response.json())
             .then((json) =>{

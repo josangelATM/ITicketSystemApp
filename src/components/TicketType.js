@@ -1,16 +1,19 @@
-import { Button, StyleSheet,View, Text } from 'react-native';
+import { StyleSheet,View, Text } from 'react-native';
 import AppButton from './AppButton';
+import { useNavigation } from '@react-navigation/native';
+
 
 const TicketType = (props) =>{
-    console.log(props)
+    const navigation = useNavigation(); 
     return(
         <View style={styles.container}>
             <Text style={styles.title}>{props.item.title}</Text>
             <Text>{props.item.description}</Text>
-            <AppButton title='Create' style={styles.button}/>
+            <AppButton title='Create' style={styles.button} onPress={() => navigation.navigate('CreateTicket',{
+                ticketType: props.item
+            })}/>
         </View>
-    )
-    
+    )   
 }
 
 const styles = StyleSheet.create({

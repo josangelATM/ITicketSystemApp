@@ -14,6 +14,7 @@ import * as Progress from 'react-native-progress';
 import * as SecureStore from 'expo-secure-store';
 import { fetchUserData } from './src/store/actions/index'
 import ChooseTicketType from './src/screens/ChooseTicketType';
+import CreateTicket from './src/screens/CreateTicket';
 
 const Stack = createNativeStackNavigator();
 
@@ -95,6 +96,10 @@ function LoggedIn() {
       <Stack.Screen
       name="ChooseTicketType"
       component={ChooseTicketType}
+      />
+      <Stack.Screen
+      name="CreateTicket"
+      component={CreateTicket}
       />
       <Stack.Screen
       name="Account"
