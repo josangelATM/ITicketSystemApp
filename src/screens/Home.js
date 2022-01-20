@@ -13,7 +13,7 @@ const Home = ({navigation}) =>{
             <ScrollView style={styles.buttonContainerScroll}>
                 <Text style={styles.welcomeTitle}>Hello {user.user.firstName}!</Text> 
                 <MainIcon title='Request something' icon='tools' onPress={() => navigation.navigate('ChooseTicketType')}/>
-                <MainIcon title='My Tickets' icon='list'/>
+                <MainIcon title='My Tickets' icon='list' onPress={() => navigation.navigate('Tickets')}/>
                 <MainIcon title='Account' icon='user-alt'/>
                 <MainIcon title='My Tickets' icon='users'/>
                 <MainIcon title='Account' icon='clipboard-list' onPress={() => navigation.navigate('Account')}/>

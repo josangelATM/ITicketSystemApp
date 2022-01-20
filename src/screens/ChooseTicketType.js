@@ -44,7 +44,6 @@ const ChooseTicketType = () => {
             :
             <FlatGrid
                 data={ticketTypes}
-                style={styles.grid}
                 spacing={20}
                 renderItem={(ticketType) => (
                     <TicketType {...ticketType}/>
@@ -56,8 +55,6 @@ const ChooseTicketType = () => {
 }
 
 const styles = StyleSheet.create({
-    grid:{
-    },
     container:{
         flex:1,
         alignItems:'center',

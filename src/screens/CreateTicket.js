@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, StyleSheet,View, Text, TextInput, ScrollView } from 'react-native';
+import {StyleSheet,View, Text, TextInput, ScrollView } from 'react-native';
 import AppButton from '../components/AppButton';
 import colors from '../theme/colors';
 import * as SecureStore from 'expo-secure-store';
