@@ -2,10 +2,12 @@ import { useEffect, useState } from "react";
 import { StyleSheet, Text, View } from 'react-native';
 import * as Progress from 'react-native-progress';
 import * as SecureStore from 'expo-secure-store';
-import DataTable from '../components/DataTable'
-const Tickets = () => {
+import DataTableView from '../components/DataTableView'
+const Tickets = ({navigation}) => {
     const [data,setData] = useState([])
     const [isBusy,setBusy] = useState(true)
+
+    navigation
     
     const fetchTickets = () =>{
         SecureStore.getItemAsync('token').then((token) =>{
@@ -27,6 +29,8 @@ const Tickets = () => {
         })
     }
 
+    
+
     useEffect(() =>{
         fetchTickets()
     },[])
@@ -39,7 +43,7 @@ const Tickets = () => {
             :
             <View style={styles.tableContainer}>
                 <Text style={styles.title}>My Tickets</Text>
-                <DataTable data={data}/>
+                <DataTableView data={data}/>
             </View>   
             }
         </View>

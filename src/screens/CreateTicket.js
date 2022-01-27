@@ -13,7 +13,6 @@ const CreateTicket = ({route,navigation}) =>{
                 TicketTypeId: ticketType.id,
                 Comments: comments
             })
-            
             fetch('https://iticketsystem20211228085301.azurewebsites.net/api/tickets',{
                 method:'POST',
                 headers:{

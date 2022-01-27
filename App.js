@@ -16,6 +16,7 @@ import { fetchUserData } from './src/store/actions/index'
 import ChooseTicketType from './src/screens/ChooseTicketType';
 import CreateTicket from './src/screens/CreateTicket';
 import Tickets from './src/screens/Tickets';
+import Ticket from './src/screens/Ticket';
 
 const Stack = createNativeStackNavigator();
 
@@ -105,6 +106,10 @@ function LoggedIn() {
       <Stack.Screen
       name="Tickets"
       component={Tickets}
+      />
+      <Stack.Screen
+      name="Ticket"
+      component={Ticket}
       />
       <Stack.Screen
       name="Account"
